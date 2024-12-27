@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Pesan untuk Kamu</title>
+
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+
+  <!-- Gaya CSS -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Dancing Script', cursive;
+      background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+    #wallpaper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: blur(10px);
+    }
+    #content {
+      margin-top: 20vh;
+      padding: 20px;
+    }
+    #messageBox {
+      margin-top: 20px;
+    }
+    .heart {
+      font-size: 2rem;
+      animation: float 5s infinite ease-in-out;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 20px;
+      background: #ff6b6b;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      background: #e84141;
+    }
+    #footer {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-size: 0.8rem;
+      color: #fff;
+      opacity: 0.8;
+      font-family: 'Arial', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background -->
+  <img src="https://feeldreams.github.io/wp4.jpg" id="wallpaper" alt="Background">
+
+  <!-- Konten Utama -->
+  <div id="content">
+    <h1>Hai, Lihaa!</h1>
+    <p>Ini pesan spesial untuk kamu lii❤️</p>
+    <div id="messageBox">
+      <p id="message">Klik tombol di bawah untuk lihat pesan!<br><br> di klikk kalo ga aku marah😡</p>
+    </div>
+    <button id="revealButton">Buka Pesan</button>
+  </div>
+
+  <!-- Teks Footer -->
+  <div id="footer">by Satrio Aditya</div>
+
+  <!-- Interaksi dengan JavaScript -->
+  <script>
+    const button = document.getElementById('revealButton');
+    const messageBox = document.getElementById('messageBox');
+    const message = document.getElementById('message');
+
+    button.addEventListener('click', () => {
+      Swal.fire({
+        title: 'Pesan untuk Kamu',
+        html: '<p>Aku bersyukur ada kamu di hidupku 🥰</p><p>Jangan pernah lelah ya, aku di sini selalu mendukungmu ❤️ <br>lii aku beruntung bisa ketemu,kenal,dekat <br>sama kamuu, semoga selamanya seperti inii yaa🥰</p>',
+        icon: 'success',
+        confirmButtonText: 'Aku Sayang Kamu!<br> Klikk...'
+      }).then(() => {
+        message.textContent = 'Semangat terus, aku percaya kamu bisa!....... JUJUR AKU KANGEN KAMUU..😭😭😭';
+        button.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>
